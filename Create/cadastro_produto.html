@@ -14,7 +14,7 @@
     <form id="formProd">
         <div class="foto">
             <label class="label" for="foto">Foto do produto</label>
-            <input type="file" id="foto" name="foto" class="input-foto">
+            <input type="text" id="foto" name="foto" class="input-foto">
         </div>
 
         <div class="container">
@@ -22,6 +22,8 @@
             <div class="campos">
                 <label class=label for="nome">Nome</label>
                 <input type="text" id="nome" name="nome" class="nome">
+                <label class=label for="preco">Preço</label>
+                <input type="number" id="preco" name="preco">
             </div>
 
             <div class="campos">
@@ -29,28 +31,26 @@
                 <input type="text" id="descricao" name="descricao" class="descricao">
             </div>
 
+            
             <div class="campos">
-                <label class=label for="categoria">Categoria</label>
-                <select id="categoria" name="categoria"></select>
-                <label class="label" for="fornecedor">Fornecedor</label>
-                <select id="fornecedor" name="fornecedor"></select>
+
+                <label class=label for="estoque">Estoque</label>
+                <input type="number" id="estoque" name="estoque">    
             </div>
 
             <div class="campos">
-                <label class=label for="preco">Preço</label>
-                <input type="number" id="preco" name="preco">
-                <label class=label for="estoque">Quantidade</label>
-                <input type="number" id="estoque" name="quantidade">    
+                <label class=label for="categoriaId">Categoria</label>
+                <input type="number" id="categoriaId" name="categoriaId">
+                <!--<label class="label" for="fornecedor">Fornecedor</label>
+                <input id="fornecedor" name="fornecedor">-->
             </div>
+
     </form>
             <div class="botoes">
                 <button class="botao" id="btnVoltar">Voltar</button>
                 <button class="botao" id="btnSalvarProd">Salvar</button>
             </div>
             
-        </div>
-        <div class ="foto">
-            <img src="../images/logo.jpg" alt="foto" class="foto-img">
         </div>
     
 

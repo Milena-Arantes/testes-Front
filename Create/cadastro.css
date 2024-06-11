@@ -51,7 +51,7 @@ body{
     height: 300px;
 }
 
-.input-foto {
+/*.input-foto {
     width: 180px;
     height: 180px;
     border: 2px dashed #7a6262;
@@ -63,8 +63,7 @@ body{
 
 .input-foto:hover{
     border-color: #999; /* Muda a cor da borda ao passar o mouse */
-    color: #666; /* Muda a cor do texto ao passar o mouse */
-}
+    /*color: #666; /* Muda a cor do texto ao passar o mouse }*/
 
 input, select {
     padding: 10px; /* Espaçamento interno dos inputs */
@@ -103,15 +102,6 @@ button:hover{
     background-color: var(--hamRed);
 }
 
-.foto {
-    position:fixed;
-    right: 65px;
-}
-
-.foto-img{
-    width: 70vh;
-    height: auto;
-}
 
 :root {
     --White: #ffffff;
