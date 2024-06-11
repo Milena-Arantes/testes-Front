@@ -1,0 +1,95 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    font-weight: bold;
+    text-align: center;
+}
+
+button{
+    font-weight: bold;
+}
+.botao{
+    position: absolute;
+    left: 15px;
+    top:18px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--salamiBrown);
+    color: var(--White);
+    cursor: pointer;
+}
+
+.btnDelete{
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--StrawberryRed);
+    color: var(--White);
+    cursor: pointer;
+}
+
+.btnDelete:hover{
+    background-color: var(--WineRed);
+}
+
+.btnEditar{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--Blue);
+    color: var(--White);
+    cursor: pointer;
+}
+
+.btnEditar:hover{
+    background-color: var(--BlueBottle);
+}
+
+button:hover{
+    background-color: var(--hamRed);
+}
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+table thead tr{
+    background-color: var(--cheeseWhite);
+    color: var(--#000000);
+    text-align: left;
+}
+
+table th, table td{
+    border: 1px solid var(--cheeseWhite);
+    padding: 8px;
+}
+
+table tbody tr:nth-of-type(even){
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover{
+    background-color: #e9e9e9;
+}
+
+:root {
+    --White: #ffffff;
+    --salamiBrown: #c7a077;
+    --hamRed: #9f6359;
+    --cheeseYellow: #f4c991;
+    --cheeseWhite: #eadacc;
+    --Blue: #0193c6;
+    --BlueBottle: #035f7e;
+    --hamPinky: #dcb29e;
+    --StrawberryRed: #c50000;
+    --WineRed: #800707;
+}

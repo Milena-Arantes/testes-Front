@@ -57,6 +57,7 @@ h2{
     cursor: pointer;
     width: 100%;
     box-sizing: border-box;
+    font-weight: bold;
 }
 
 button{
