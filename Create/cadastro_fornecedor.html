@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset = "UTF-8"> 
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Cadastro de Fornecedor</title>
+        <link rel="stylesheet" href="cadastro.css">
+    </head>
+
+<body>
+        <div class="cabecalho">
+            <h1>Cadastrar fornecedor</h1>
+        </div>
+
+        <form id="formFornecedor">
+            <div class="container">
+                <div class="campos">
+                    <div class="campos">
+                        <label class=label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome">
+                    </div>
+                    <div class="campos">
+                        <label class=label for="telefone">Telefone</label>
+                        <input type="text" id="telefone" name="telefone">
+                    </div>
+                    <div class="campos">
+                        <label class=label for="email">E-mail</label>
+                        <input type="text" id="email" name="email">
+                    </div>
+                </div>
+            
+        </form>
+                <div class="botoes">
+                    <button class="botao" id="btnVoltar">Voltar</button>
+                    <button class="botao" id="btnSalvarProd">Salvar</button>
+                </div>
+            </div>
+            <div class ="foto">
+                <img src="../images/logo.jpg" alt="foto" class="foto-img">
+            </div>
+
+        <script src = "cadastro.js"></script>
+</body>
+</html>

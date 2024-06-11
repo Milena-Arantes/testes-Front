@@ -1,26 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Dados de exemplo de categorias e fornecedores (você substituirá isso com dados reais do seu sistema)
-    var categorias = ["Eletrônicos", "Roupas", "Alimentos"];
-  
-    // Função para preencher o dropdown de categorias
-    function preencherCategorias() {
-      var select = document.getElementById("categoria");
-  
-      categorias.forEach(function(categoria) {
-        var option = document.createElement("option");
-        option.text = categoria;
-        select.add(option);
-      });
-    }
-    // Chamada das funções para preencher os dropdowns ao carregar a página
-    preencherCategorias();
-  });
-
-  const botao = document.getElementById('btnVoltar');
-
-botao.addEventListener('click', function(){
-  //  window.location.href = 'file:///C:/Users/1050482323022/Downloads/OneDrive_2024-06-10/teste%20da%20API/frontend/index.html';
-      window.location.href = "../index.html"
-  
+const btnVoltar = document.getElementById('btnVoltar');
+btnVoltar.addEventListener('click', function(event){
+  event.preventDefault();
+  window.location.href = "../index.html";
 });
+
+
+document.addEventListener('DOMContentLoaded', function(){
+  const formulario = document.getElementById('formulario');
+  const btnSalvarProd= document.getElementById('btnSalvarProd');
+
+
+  btnSalvarProd.addEventListener('click', function(event){
+    event.preventDefault();
+    //pega dados do forms
+    const formData = new FormData(formProd);
+    const data = {};
+    formData.forEach((value, key)=>{
+      data[key] = value;
+    });
+
+    //envia os dados para a API de teste
+    fetch('https://jsonplaceholder.typicode.com/posts',{
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+      console.log('Dados salvos com sucesso!', result);
+    })
+
+    .catch(error => {
+      console.error('Erro ao salvar os dados:', error);
+    });
+  });
+})
   

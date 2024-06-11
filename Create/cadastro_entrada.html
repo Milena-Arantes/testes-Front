@@ -30,18 +30,10 @@
                 <button class="botao" id="btnSalvar">Salvar</button>
             </div>
         </div> 
+        <div class ="foto">
+            <img src="../images/logo.jpg" alt="foto" class="foto-img">
+        </div>
 
         <script src = "cadastro.js"></script>
-
-
-        model Movimentacao {
-            id         Int                @id @default(autoincrement())
-            produto      Produto    @relation(fields: [produtoId], references: [id])
-            produtoId    Int
-            quantidade         Float
-            validade String
-            data       String
-            codigoMovimentacao Int
-          }
-
-          id="descricao" name="descricao" class="descricao">
+</body>
+</html>

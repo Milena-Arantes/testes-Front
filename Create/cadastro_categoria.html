@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset = "UTF-8"> 
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Cadastro de Categoria</title>
+        <link rel="stylesheet" href="cadastro.css">
+    </head>
+<body>
+    <div class="cabecalho">
+        <h1>Nova Categoria</h1>
+    </div>
+    
+    <form id="formCategoria">
+        <div class="container">
+                <div class="campos">
+                    <label class=label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <div class="campos">
+                    <label class=label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" name="descricao" class="descricao">
+                </div>
+    </form>
+            <div class="botoes">
+                <button class="botao" id="btnVoltar">Voltar</button>
+                <button class="botao" id="btnSalvarProd">Salvar</button>
+            </div>
+        </div>
+        <div class ="foto">
+            <img src="../images/logo.jpg" alt="foto" class="foto-img">
+        </div>
+</body>
+
+<script src = "cadastro.js"></script>
+</html>

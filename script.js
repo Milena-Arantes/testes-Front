@@ -3,22 +3,22 @@ btnCadProd.addEventListener('click', function(){
     window.location.href = "../testes-Front/Create/cadastro_produto.html";
 });
 
-const btnCadEntrada = document.getElementsById('btnCadastroEntrada');
+const btnCadEntrada = document.getElementById('btnCadastroEntrada');
 btnCadEntrada.addEventListener('click', function(){
     window.location.href = "../testes-Front/Create/cadastro_entrada.html";
 });
 
-const btnCadCat = document.getElementsById('btnCadastroCategoria');
-btnCatCat.addEventListener('click', function(){
+const btnCadCat = document.getElementById('btnCadastroCategoria');
+btnCadCat.addEventListener('click', function(){
     window.location.href = "../testes-Front/Create/cadastro_categoria.html";
 });
 
-const btnCadForn = document.getElementsById('btnCadastroFornecedor');
+const btnCadForn = document.getElementById('btnCadastroFornecedor');
 btnCadForn.addEventListener('click', function(){
     window.location.href = "../testes-Front/Create/cadastro_fornecedor.html";
 });
 
-const btnControle = document.getElementsById('btnControleEstoque');
+const btnControle = document.getElementById('btnControleEstoque');
 btnControle.addEventListener('click', function(){
-    window.location.href = "../testes-Front/Create/cadastro_fornecedor.html";
+    window.location.href = "../testes-Front/Create/controle_estoque.html";
 });

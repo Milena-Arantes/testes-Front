@@ -39,12 +39,25 @@ h2{
     gap: 2em;
 }
 
-/*.coluna{
+.menu-estoque{
+    position: absolute;
+    bottom: 195px;
+    left: 83px;
+}
+
+.btnEstoque{
+    margin-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    background-color: var(--salamiBrown);
+    color: var(--White);
+    padding: 25px 170px;
+    border:none;
+    border-radius: 0 0 10px 0;
+    cursor: pointer;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 150px;
-}*/
+    box-sizing: border-box;
+}
 
 button{
     margin-top: 10px;

@@ -11,51 +11,50 @@
         <h1>Novo Produto</h1>
     </div>
     
-
-    <div class="foto">
-        <label class="label" for="foto">Foto do produto</label>
-        <input type="file" id="foto" name="foto" class="input-foto">
-    </div>
-
-    <div class="container">
-
-        <div class="campos">
-            <label class=label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" class="nome">
+    <form id="formProd">
+        <div class="foto">
+            <label class="label" for="foto">Foto do produto</label>
+            <input type="file" id="foto" name="foto" class="input-foto">
         </div>
 
-        <div class="campos">
-            <label class=label for="descricao">Descrição</label>
-            <input type="text" id="descricao" name="descricao" class="descricao">
-        </div>
+        <div class="container">
 
-        <div class="campos">
-            <label class=label for="categoria">Categoria</label>
-            <select id="categoria" name="categoria"></select>
-            <label class="label" for="fornecedor">Fornecedor</label>
-            <select id="fornecedor" name="fornecedor"></select>
-        </div>
+            <div class="campos">
+                <label class=label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" class="nome">
+            </div>
 
-        <div class="campos">
-            <label class=label for="preco">Preço</label>
-            <input type="number" id="preco" name="preco">
-            <label class=label for="estoque">Quantidade</label>
-            <input type="number" id="estoque" name="quantidade">    
-        </div>
-        <div class="botoes">
-        <button class="botao" id="btnVoltar">Voltar</button>
-        <button class="botao" id="btnSalvar">Salvar</button>
-        </div>
-    </div>
+            <div class="campos">
+                <label class=label for="descricao">Descrição</label>
+                <input type="text" id="descricao" name="descricao" class="descricao">
+            </div>
 
-</body>
-</html>
+            <div class="campos">
+                <label class=label for="categoria">Categoria</label>
+                <select id="categoria" name="categoria"></select>
+                <label class="label" for="fornecedor">Fornecedor</label>
+                <select id="fornecedor" name="fornecedor"></select>
+            </div>
+
+            <div class="campos">
+                <label class=label for="preco">Preço</label>
+                <input type="number" id="preco" name="preco">
+                <label class=label for="estoque">Quantidade</label>
+                <input type="number" id="estoque" name="quantidade">    
+            </div>
+    </form>
+            <div class="botoes">
+                <button class="botao" id="btnVoltar">Voltar</button>
+                <button class="botao" id="btnSalvarProd">Salvar</button>
+            </div>
+            
+        </div>
+        <div class ="foto">
+            <img src="../images/logo.jpg" alt="foto" class="foto-img">
+        </div>
     
 
-    <!--<div class="descricaoProd">
-        <label class=label for="descricao">Descrição do produto</label>
-        <input type="text" id="descricao" name="descricao">
-    </div>
-</body>-->
+</body>
 
 <script src = "cadastro.js"></script>
+</html>
