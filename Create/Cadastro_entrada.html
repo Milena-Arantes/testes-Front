@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset = "UTF-8"> 
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Cadastro de Entrada</title>
+        <link rel="stylesheet" href="cadastro.css">
+    </head>
+
+<body>
+       <div class="cabecalho">
+            <h1>Cadastrar entrada</h1>
+        </div>
+        
+        <div class="container">
+            <div class="campos">
+                <label class="label" for="produto">Produto</label>
+                <select id="produto" name ="produto"></select>
+            </div>
+            <div class="campos">
+                <label class="dataEntrada">Data de entrada</label>
+                <input type="text" id="dataEntrada">
+                <label class="dataValidade">Data de Validade</label>
+                <input type="text" id="dataValidade">
+                <label class="label" for="quantidade">Quantidade</label>
+                <input type="text" id="quantidade">
+            </div>
+            <div class="botoes">
+                <button class="botao" id="btnVoltar">Voltar</button>
+                <button class="botao" id="btnSalvar">Salvar</button>
+            </div>
+        </div> 
+
+        <script src = "cadastro.js"></script>
+
+
+        model Movimentacao {
+            id         Int                @id @default(autoincrement())
+            produto      Produto    @relation(fields: [produtoId], references: [id])
+            produtoId    Int
+            quantidade         Float
+            validade String
+            data       String
+            codigoMovimentacao Int
+          }
+
+          id="descricao" name="descricao" class="descricao">

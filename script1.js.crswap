@@ -1,0 +1,24 @@
+function mostrarSecao(secao) {
+    // Oculta o menu principal
+    document.getElementById('menus').style.display = 'none';
+
+    // Oculta todas as seções
+    var secoes = document.querySelectorAll('main section');
+    secoes.forEach(function(secaoAtual) {
+        secaoAtual.style.display = 'none';
+    });
+
+    // Exibe apenas a seção selecionada
+    document.getElementById(secao).style.display = 'block';
+}
+
+function voltar() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paginaAnterior = urlParams.get('pagina_anterior');
+
+    if (paginaAnterior === 'menu') {
+        window.location.href = 'file:///C:/Users/milena.arantes/OneDrive%20-%20Fatec%20Centro%20Paula%20Souza/teste%20da%20API/frontend/indexMENUPRINCIPAL.html'; // Substitua 'menu.html' pela URL da sua página de menu
+    } else {
+        window.history.back();
+    }
+}

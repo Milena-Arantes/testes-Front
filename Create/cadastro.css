@@ -1,0 +1,117 @@
+body{
+    font-weight: bold;
+    font-size:15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.cabecalho{
+    background-color: var(--salamiBrown);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 999; /*garante que fique acima de outros elementos*/;
+    font-family: Geneva,sans-serif;
+    color: var(--White);
+}
+
+.container {
+    position:absolute;
+    top: 150px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centralizando o formulário */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.campos{
+    padding: 2% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.foto .label {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.foto {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 15px;
+    position: absolute;
+    top:175px;
+    right: 300px;
+    height: 300px;
+}
+
+.input-foto {
+    width: 180px;
+    height: 180px;
+    border: 2px dashed #7a6262;
+    border-radius: 10px;
+    background-color: var(--Gray);
+    cursor: pointer;
+    position: relative;
+}
+
+.input-foto:hover{
+    border-color: #999; /* Muda a cor da borda ao passar o mouse */
+    color: #666; /* Muda a cor do texto ao passar o mouse */
+}
+
+
+input, select {
+    padding: 10px; /* Espaçamento interno dos inputs */
+    border: 1px solid #ccc; /* Borda dos inputs */
+    border-radius: 5px; /* Borda arredondada */
+    width: 250px; /* Inputs ocupam toda a largura disponível */
+    background-color: var(--Gray);
+}
+
+.nome{
+    width: 500px;
+}
+.descricao {
+    height: 70px; /* Altura maior para a descrição */
+    resize: vertical;
+    width: 500px;
+}
+
+.botoes{
+    display: flex;
+    justify-content: left;
+    margin-top:20px;
+}
+
+.botao{
+    padding: 15px 40px;
+    margin-left: 50px;
+    border: none;
+    background-color: var(--salamiBrown);
+    color: var(--White);
+    cursor: pointer;
+
+}
+
+button:hover{
+    background-color: var(--hamRed);
+}
+
+:root {
+    --White: #ffffff;
+    --Black: #000000;
+    --Gray: #e6e2e2;
+    --salamiBrown: #c7a077;
+    --hamRed: #9f6359;
+    --cheeseYellow: #f4c991;
+    --cheeseWhite: #eadacc;
+    --Blue: #0193c6;
+    --hamPinky: #dcb29e;
+}
