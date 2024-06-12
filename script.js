@@ -22,5 +22,5 @@ btnCadForn.addEventListener('click', function(){
 
 const btnControle = document.getElementById('btnControleEstoque');
 btnControle.addEventListener('click', function(){
-    window.location.href = "./menu/controle_estoque.html";
+    window.location.href = "./Read/controle_estoque.html";
 });

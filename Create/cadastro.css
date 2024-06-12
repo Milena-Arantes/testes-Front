@@ -65,7 +65,7 @@ body{
     border-color: #999; /* Muda a cor da borda ao passar o mouse */
     /*color: #666; /* Muda a cor do texto ao passar o mouse }*/
 
-input, select {
+input{
     padding: 10px; /* Espaçamento interno dos inputs */
     border: 1px solid #ccc; /* Borda dos inputs */
     border-radius: 5px; /* Borda arredondada */

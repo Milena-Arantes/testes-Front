@@ -11,29 +11,32 @@
        <div class="cabecalho">
             <h1>Cadastrar entrada</h1>
         </div>
-        
+        <form id="formEntrada">
         <div class="container">
             <div class="campos">
-                <label class="label" for="produto">Produto</label>
-                <select id="produto" name ="produto"></select>
-            </div>
-            <div class="campos">
-                <label class="dataEntrada">Data de entrada</label>
-                <input type="text" id="dataEntrada">
-                <label class="dataValidade">Data de Validade</label>
-                <input type="text" id="dataValidade">
-                <label class="label" for="quantidade">Quantidade</label>
-                <input type="text" id="quantidade">
+                <label class=label for="produto">Id do Produto</label>
+                <input type="number" id="produtoId" name="produtoId">
+
+                <label class=label for="data">Data de entrada</label>
+                <input type="text" id="data" name="data">
+                <label class=label for="validade">Data de Validade</label>
+                <input type="text" id="validade" name="validade">
+                <label class=label for="quantidade">Quantidade</label>
+                <input type="number" id="quantidade" name="quantidade">
+                <label class=label for="codigoMovimentacao">Código de Movimentação</label>
+                <input type="number" for="codigoMovimentacao" name="codigoMovimentacao">
             </div>
             <div class="botoes">
                 <button class="botao" id="btnVoltar">Voltar</button>
-                <button class="botao" id="btnSalvar">Salvar</button>
+                <button class="botao" id="btnSalvarEntrada">Salvar</button>
             </div>
         </div> 
+    </form>
         <div class ="foto">
             <img src="../images/logo.jpg" alt="foto" class="foto-img">
         </div>
 
-        <script src = "cadastro.js"></script>
+        <script src = "cadastroentrada.js"></script>
+        <script src = "botoes.js"></script>
 </body>
 </html>

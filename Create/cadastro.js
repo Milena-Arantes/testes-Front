@@ -59,11 +59,6 @@ document.addEventListener('DOMContentLoaded', function(){
       console.error('Erro ao salvar os dados:', error);
     });
   });*/
-  const btnVoltar = document.getElementById('btnVoltar');
-btnVoltar.addEventListener('click', function(event){
-  event.preventDefault();
-  window.history.back();
-});
 
 document.addEventListener('DOMContentLoaded', function(){
   const formProd = document.getElementById('formProd');
