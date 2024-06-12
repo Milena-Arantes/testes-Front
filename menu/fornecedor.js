@@ -8,3 +8,8 @@ const btnCadForn = document.getElementById('btnCadForn');
 btnCadForn.addEventListener('click', function(){
   window.location.href = '../Create/cadastro_fornecedor.html';
 });
+
+const btnListaForn = document.getElementById('btnListaFornecedor');
+btnListaForn.addEventListener('click', function(){
+  window.location.href = '../Read/consulta_fornecedor.html';
+})

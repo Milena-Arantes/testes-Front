@@ -1,0 +1,205 @@
+const btnVoltar = document.getElementById('btnVoltar');
+btnVoltar.addEventListener('click', function(event){
+  event.preventDefault();
+  window.history.back();
+});
+            
+            document.addEventListener("DOMContentLoaded", async function () {
+                try {
+                    const response = await fetch('https://projeto-integrador-k9d3.onrender.com/api/produtoFornecedor');
+                    const data = await response.json();
+            
+                    const tableBody = document.querySelector('#listaProdForn tbody');
+                    if (!tableBody) {
+                        console.error('Elemento tbody não encontrado!');
+                        return;
+                    }
+            
+                    for (const prodForn of data) {
+                        const row = document.createElement('tr');
+            
+                        const produtoId = prodForn.produtoId;
+                        const fornecedorId = prodForn.fornecedorId;
+                        const nomeProdutoId = await buscarNomeProduto(produtoId);
+                        const nomeFornecedorId = await buscarNomeFornecedor(fornecedorId);
+            
+                        row.innerHTML = `
+                            <td>${prodForn.id}</td>
+                            <td>${produtoId}</td>
+                            <td>${nomeProdutoId}</td>
+                            <td>${fornecedorId}</td>
+                            <td>${nomeFornecedorId}</td>
+                            <th><button class="btnEditar" data-id="${prodForn.id}">Editar</button></th>
+                            <th><button class="btnDeletar" data-id="${prodForn.id}">Deletar</button></th>
+                        `;
+                        tableBody.appendChild(row);
+                    }
+            
+                    tableBody.addEventListener('click', function(event){
+                        if (event.target.classList.contains('btnEditar')) {
+                            const id = event.target.getAttribute('data-id');
+                            editarProdForn(id);
+                        } else if(event.target.classList.contains('btnDeletar')){
+                            const id = event.target.getAttribute('data-id');
+                            const rowElement = event.target.closest('tr');
+                            deletarProdForn(id, rowElement);
+                        }
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar relações:', error);
+                }
+            });
+            
+            async function buscarNomeProduto(id) {
+                try {
+                    const response = await fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtos/${id}`);
+                    if (!response.ok) {
+                        throw new Error('Não foi possível encontrar o produto.');
+                    }
+                    const data = await response.json();
+                    return data.nome;
+                } catch (error) {
+                    console.error('Erro ao buscar o nome do produto:', error);
+                    return 'Nome do Produto não encontrado';
+                }
+            }
+            
+            async function buscarNomeFornecedor(id) {
+                try {
+                    const response = await fetch(`https://projeto-integrador-k9d3.onrender.com/api/fornecedores/${id}`);
+                    if (!response.ok) {
+                        throw new Error('Não foi possível encontrar o fornecedor.');
+                    }
+                    const data = await response.json();
+                    return data.nome;
+                } catch (error) {
+                    console.error('Erro ao buscar o nome do fornecedor:', error);
+                    return 'Nome do Fornecedor não encontrado';
+                }
+            }
+            
+            function editarProdForn(id) {
+                alert(`Editar relação com ID: ${id}`);
+                window.location.href = "../Update/update_prod_forn.html";
+            }
+            
+            function deletarProdForn(id, rowElement) {
+                const confirmDelete = confirm('Tem certeza de que deseja deletar esta relação?');
+                if(confirmDelete) {
+                    console.log(`Deletando relação com ID: ${id}`);
+                    fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtoFornecedor/${id}`, {
+                        method: 'DELETE',
+                    })
+                    .then(response => {
+                        if(response.ok) {
+                            console.log(`Relação com ID ${id} deletada com sucesso.`);
+                            rowElement.remove();
+                        } else {
+                            console.error('Erro ao deletar relação:', response.statusText);
+                        }
+                    })
+                    .catch(error => console.error('Erro ao deletar relação:', error));
+                }
+            }
+            
+
+                        document.addEventListener("DOMContentLoaded", async function () {
+                            try {
+                                const response = await fetch('https://projeto-integrador-k9d3.onrender.com/api/produtoFornecedor');
+                                const data = await response.json();
+                        
+                                const tableBody = document.querySelector('#listaProdForn tbody');
+                                if (!tableBody) {
+                                    console.error('Elemento tbody não encontrado!');
+                                    return;
+                                }
+                        
+                                for (const prodForn of data) {
+                                    const row = document.createElement('tr');
+                        
+                                    const produtoId = prodForn.produtoId;
+                                    const fornecedorId = prodForn.fornecedorId;
+                                    const nomeProdutoId = await buscarNomeProduto(produtoId);
+                                    const nomeFornecedorId = await buscarNomeFornecedor(fornecedorId);
+                        
+                                    row.innerHTML = `
+                                        <td>${prodForn.id}</td>
+                                        <td>${produtoId}</td>
+                                        <td>${nomeProdutoId}</td>
+                                        <td>${fornecedorId}</td>
+                                        <td>${nomeFornecedorId}</td>
+                                        <th><button class="btnEditar" data-id="${prodForn.id}">Editar</button></th>
+                                        <th><button class="btnDeletar" data-id="${prodForn.id}">Deletar</button></th>
+                                    `;
+                                    tableBody.appendChild(row);
+                                }
+                        
+                                tableBody.addEventListener('click', function(event){
+                                    if (event.target.classList.contains('btnEditar')) {
+                                        const id = event.target.getAttribute('data-id');
+                                        editarProdForn(id);
+                                    } else if(event.target.classList.contains('btnDeletar')){
+                                        const id = event.target.getAttribute('data-id');
+                                        const rowElement = event.target.closest('tr');
+                                        deletarProdForn(id, rowElement);
+                                    }
+                                });
+                            } catch (error) {
+                                console.error('Erro ao carregar relações:', error);
+                            }
+                        });
+                        
+                        async function buscarNomeProduto(id) {
+                            try {
+                                const response = await fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtos/${id}`);
+                                if (!response.ok) {
+                                    throw new Error('Não foi possível encontrar o produto.');
+                                }
+                                const data = await response.json();
+                                return data.nome;
+                            } catch (error) {
+                                console.error('Erro ao buscar o nome do produto:', error);
+                                return 'Nome do Produto não encontrado';
+                            }
+                        }
+                        
+                        async function buscarNomeFornecedor(id) {
+                            try {
+                                const response = await fetch(`https://projeto-integrador-k9d3.onrender.com/api/fornecedores/${id}`);
+                                if (!response.ok) {
+                                    throw new Error('Não foi possível encontrar o fornecedor.');
+                                }
+                                const data = await response.json();
+                                return data.nome;
+                            } catch (error) {
+                                console.error('Erro ao buscar o nome do fornecedor:', error);
+                                return 'Nome do Fornecedor não encontrado';
+                            }
+                        }
+                        
+                        function editarProdForn(id) {
+                            alert(`Editar relação com ID: ${id}`);
+                            window.location.href = "../Update/update_prod_forn.html";
+                        }
+                        
+                        function deletarProdForn(id, rowElement) {
+                            const confirmDelete = confirm('Tem certeza de que deseja deletar esta relação?');
+                            if(confirmDelete) {
+                                console.log(`Deletando relação com ID: ${id}`);
+                                fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtoFornecedor/${id}`, {
+                                    method: 'DELETE',
+                                })
+                                .then(response => {
+                                    if(response.ok) {
+                                        console.log(`Relação com ID ${id} deletada com sucesso.`);
+                                        rowElement.remove();
+                                    } else {
+                                        console.error('Erro ao deletar relação:', response.statusText);
+                                    }
+                                })
+                                .catch(error => console.error('Erro ao deletar relação:', error));
+                            }
+                        }
+                        
+            
+            

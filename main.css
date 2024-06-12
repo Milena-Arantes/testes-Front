@@ -11,8 +11,7 @@ body{
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
-    justify-content: left; /* Centraliza horizontalmente */
-    align-items: left; /* Centraliza verticalmente */
+    justify-content: flex-start;
 }
 
 h1{
@@ -33,32 +32,12 @@ h2{
 }
 
 .menu{
-    padding: 2% 10%;
+    padding: 4% 10%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2em;
-}
-
-.menu-estoque{
-    position: absolute;
-    bottom: 195px;
-    left: 83px;
-}
-
-.btnEstoque{
-    margin-top: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: medium;
-    background-color: var(--salamiBrown);
-    color: var(--White);
-    padding: 25px 170px;
-    border:none;
-    border-radius: 0 0 10px 0;
-    cursor: pointer;
-    width: 100%;
-    box-sizing: border-box;
-    font-weight: bold;
+    flex-direction: column; /* Permite empilhar elementos dentro de .menu */
+    align-items: flex-start;
+    position:relative;
+    left: 120px;
 }
 
 button{
@@ -67,13 +46,14 @@ button{
     font-size: medium;
     background-color: var(--salamiBrown);
     color: var(--White);
-    padding: 15px 70px;
+    padding: 15px 50px;
     border:none;
     border-radius: 0 0 10px 0;
     cursor: pointer;
-    width: 100%;
+    width: 250px;
     box-sizing: border-box;
     font-weight: bold;
+    text-align: center;
 }
 
 button:hover{

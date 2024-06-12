@@ -1,24 +1,27 @@
 document.addEventListener('DOMContentLoaded', function(){
-  const formCategoria = document.getElementById('formCategoria');
-  const btnSalvarCategoria = document.getElementById('btnSalvarCategoria');
+  const formProd = document.getElementById('formProd');
+  const btnSalvarProd = document.getElementById('btnSalvarProd');
 
-  btnSalvarCategoria.addEventListener('click', function(event){
+  btnSalvarProd.addEventListener('click', function(event){
     event.preventDefault();
 
     // Pega dados do formulário
-    const formData = new FormData(formCategoria);
+    const formData = new FormData(formProd);
     const data = {};
     formData.forEach((value, key) => {
       data[key] = value;
     });
 
-    // Converte valores numéricos para o tipo adeq
+    // Converte valores numéricos para o tipo adequado
+    data.preco = parseFloat(data.preco);
+    data.estoque = parseFloat(data.estoque);
+    data.categoriaId = parseInt(data.categoriaId);
 
     // Log para verificar o conteúdo de data
     console.log('Dados do formulário:', data);
 
     // Envia os dados para a API
-    fetch('https://projeto-integrador-k9d3.onrender.com/api/categorias', {
+    fetch('https://projeto-integrador-k9d3.onrender.com/api/produtos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -40,12 +43,12 @@ document.addEventListener('DOMContentLoaded', function(){
     })
     .then(result => {
       console.log('Dados salvos com sucesso!', result);
-      alert(`Categoria Cadastrada com Sucesso!`);
-      formCategoria.reset();
-      })
-      .catch(error => {
-        console.error('Erro ao salvar os dados:', error);
-        alert('Categoria não cadastrada! Confira se preencheu todos os campos corretamente.');
+      alert(`Produto Cadastrado com Sucesso!`);
+      formProd.reset();
+    })
+    .catch(error => {
+      console.error('Erro ao salvar os dados:', error);
+      alert('Erro ao cadastrar! Cheque se preencheu todos os campos corretamente!');
     });
   });
 });

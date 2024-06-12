@@ -5,6 +5,11 @@ btnVoltar.addEventListener('click', function(event){
 });
 
 const btnCadCategoria = document.getElementById('btnCadCategoria');
-btnCadCategoria .addEventListener('click', function(){
+btnCadCategoria.addEventListener('click', function(){
   window.location.href = '../Create/cadastro_categoria.html';
 });
+
+const btnListaCat = document.getElementById('btnListaCategoria');
+btnListaCat.addEventListener('click', function(){
+  window.location.href = '../Read/consulta_categoria.html';
+})
