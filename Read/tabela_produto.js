@@ -1,3 +1,9 @@
+const btn_Voltar = document.getElementById('btnVoltar');
+btn_Voltar.addEventListener('click', function(event){
+  event.preventDefault();
+  window.history.back();
+});
+
 document.addEventListener("DOMContentLoaded", function () {
 
         fetch('https://projeto-integrador-k9d3.onrender.com/api/produtos')
@@ -15,8 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     const categoria = produto.categoriaId;
                     const preco = produto.preco;
                     const quantidade = produto.estoque;
+                    const foto = produto.foto;
 
                     row.innerHTML = `
+                        <td><img src="${foto}" class ="foto" alt="${nome}"></td>
                         <td>${produto.id}</td>
                         <td>${nome}</td>
                         <td>${descricao}</td>

@@ -53,8 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function editarMovimentacao(id) {
         alert(`Editar movimentação com ID: ${id}`);
-        window.location.href = "../Update/update_movimentacao.html";
+         window.location.href = `../Update/update_entrada.html?id=${id}`;
         }
+
+       
 
     function deletarMovimentacao(id, rowElement){
         const confirmDelete = confirm('Tem certeza de que deseja deletar esta movimentação?');

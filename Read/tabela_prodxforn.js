@@ -62,6 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.error('Erro ao deletar:', response.statusText);
                 }
             })
-            .catch(error => console.error('Erro ao deletar produto:', error));
+            .catch(error => console.error('Erro ao deletar:', error));
         }
     }

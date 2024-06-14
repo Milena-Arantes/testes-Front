@@ -43,12 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         })
-        .catch(error => console.error('Erro ao carregar fornecedors:', error));
+        .catch(error => console.error('Erro ao carregar fornecedores:', error));
     });
 
     function editarFornecedor(id) {
         alert(`Editar fornecedor com ID: ${id}`);
-        window.location.href = "../Update/update_fornecedor.html";
+        window.location.href = `../Update/update_fornecedor.html?id=${id}`;;
         }
 
     function deletarFornecedor(id, rowElement){

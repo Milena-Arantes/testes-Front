@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function editarcategoria(id) {
         alert(`Editar categoria com ID: ${id}`);
-        window.location.href = "../Update/update_categoria.html";
+        window.location.href = `../Update/update_categoria.html?id=${id}`;
         }
 
     function deletarcategoria(id, rowElement){

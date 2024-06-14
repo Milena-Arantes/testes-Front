@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset = "UTF-8"> 
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Editar Entrada</title>
+        <link rel="stylesheet" href="update.css">
+    </head>
+
+<body>
+       <div class="cabecalho">
+            <h1>Editar entrada</h1>
+        </div>
+        <form id="formEditarEntrada">
+        <div class="container">
+            <div class="campos">
+                <input type="hidden" id="id" name="id">
+                <label class=label for="produto">Id do Produto</label>
+                <input type="number" id="produtoId" name="produtoId">
+
+                <label class=label for="data">Data de entrada</label>
+                <input type="text" id="data" name="data">
+                <label class=label for="validade">Data de Validade</label>
+                <input type="text" id="validade" name="validade">
+                <label class=label for="quantidade">Quantidade</label>
+                <input type="number" id="quantidade" name="quantidade">
+                <label class=label for="codigoMovimentacao">Código de Movimentação</label>
+                <input type="number" for="codigoMovimentacao" name="codigoMovimentacao">
+            </div>
+            <div class="botoes">
+                <button class="botao" id="btnVoltar">Voltar</button>
+                <button class="botao" id="btnEditarEntrada">Editar</button>
+            </div>
+        </div> 
+    </form>
+        <div class ="foto">
+            <img src="../images/logo.jpg" alt="foto" class="foto-img">
+        </div>
+
+        <script src = "update_entrada.js"></script>
+        <script src = "voltar.js"></script>
+</body>
+</html>
