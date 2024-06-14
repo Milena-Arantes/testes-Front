@@ -8,7 +8,7 @@ window.onload=function(){
   const btnVoltar = document.getElementById('btnVoltar');
   btnVoltar.addEventListener('click', function(event){
     event.preventDefault();
-    window.history.back();
+    window.location.href = '../index.html';
   });
   
   const btnListaProd = document.getElementById('btnListaProduto');

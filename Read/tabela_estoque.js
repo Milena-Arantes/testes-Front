@@ -1,7 +1,7 @@
 const btnVoltar = document.getElementById('btnVoltar');
 btnVoltar.addEventListener('click', function(event){
   event.preventDefault();
-  window.history.back();
+  window.location.href = '../index.html';
 });
 
 document.addEventListener("DOMContentLoaded", function () {

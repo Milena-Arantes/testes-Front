@@ -1,7 +1,7 @@
 const btn_Voltar = document.getElementById('btnVoltar');
 btn_Voltar.addEventListener('click', function(event){
   event.preventDefault();
-  window.history.back();
+  window.location.href = '../menu/menu_prod_forn.html'
 });
 
 document.addEventListener("DOMContentLoaded", function () {

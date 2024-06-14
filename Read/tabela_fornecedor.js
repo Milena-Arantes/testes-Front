@@ -1,7 +1,7 @@
 const btnVoltar = document.getElementById('btnVoltar');
 btnVoltar.addEventListener('click', function(event){
   event.preventDefault();
-  window.history.back();
+  window.location.href = '../menu/menu_fornecedor.html';
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         })
-        .catch(error => console.error('Erro ao carregar fornecedores:', error));
+        .catch(error => console.error('Erro ao carregar fornecedors:', error));
     });
 
     function editarFornecedor(id) {
