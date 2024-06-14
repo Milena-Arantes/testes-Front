@@ -1,65 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const formEditar_Prod = document.getElementById('formEditarProd');
-    const params = new URLSearchParams(window.location.search);
-    const produtoId = params.get('id');
-
-    if (!produtoId) {
-        alert('ID do produto não especificado.');
-        return;
-    }
-
-//dados existentes
-    fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtos/${produtoId}`)
-        .then(response => response.json())
-        .then(data => {
-            // preencher o formulario com os dados existentes
-            document.getElementById('nome').value = data.nome;
-            document.getElementById('categoria').value = data.categoriaId;
-            document.getElementById('preco').value = data.preco;
-            document.getElementById('quantidade').value = data.estoque;
-        })
-        .catch(error => console.error('Erro ao carregar dados do produto:', error));
-
-    // solicitando edição do produto
-    formEditar_Prod.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const formData = new FormData(formEditar_Prod);
-        const updatedData = {
-            nome: formData.get('nome'),
-            categoriaId: formData.get('categoria'),
-            preco: parseFloat(formData.get('preco')),
-            estoque: parseInt(formData.get('quantidade'))
-        };
-
-        fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtos/${produtoId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedData)
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Produto atualizado com sucesso!');
-                window.location.href = 'consulta_produto.html'; // volta para a lista
-            } else {
-                throw new Error('Erro ao atualizar produto');
-            }
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-            alert('Erro ao atualizar produto.');
-        });
-    });
-});
-
-
-
 document.addEventListener('DOMContentLoaded', function(){
+    const urlParams = new URLSearchParams(window.location.search)
+    const id = parseInt(urlParams.get('id'))
     const formEditarProd = document.getElementById('formEditarProd')
     const btnSalvarProd = document.getElementById('btnEditarProd')
-
+    document.getElementById('id').value = id;
     //quando clicar no botão
     btnSalvarProd.addEventListener('click', function(event){
         event.preventDefault()
@@ -76,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function(){
     data.estoque = parseFloat(data.estoque)
     data.categoriaId = parseInt(data.categoriaId)
 
-    const id = data.id
     //verificar conteúdo de data
     console.log('Dados do formulário:', data)
 
@@ -93,3 +36,52 @@ document.addEventListener('DOMContentLoaded', function(){
 
     })
 })
+
+
+/*function editarProduto(id, dados){
+    fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtos/${id}`,{
+        method: 'PUT',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+}
+
+  
+      // Envia os dados para a API
+      fetch('https://projeto-integrador-k9d3.onrender.com/api/produtos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data) // Converte o objeto data para uma string JSON
+      })
+      .then(response => {
+        // Verifica o status da resposta
+        if (!response.ok) {
+          return response.json().then(error => {
+            console.error('Erro da API:', error);
+            throw new Error(error.message || 'Erro ao salvar os dados');
+          }).catch(() => {
+            // Se não conseguir extrair JSON, lança um erro genérico
+            throw new Error('Erro ao salvar os dados. Status: ' + response.status);
+          });
+        }
+        return response.json();
+      })
+      .then(result => {
+        console.log('Dados salvos com sucesso!', result);
+        alert(`Produto Cadastrado com Sucesso!`);
+        formProd.reset();
+      })
+      .catch(error => {
+        console.error('Erro ao salvar os dados:', error);
+        alert('Erro ao cadastrar! Cheque se preencheu todos os campos corretamente!');
+      });
+    });
+  });*/
+  
