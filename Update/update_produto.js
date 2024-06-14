@@ -53,3 +53,43 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    const formEditarProd = document.getElementById('formEditarProd')
+    const btnSalvarProd = document.getElementById('btnEditarProd')
+
+    //quando clicar no botão
+    btnSalvarProd.addEventListener('click', function(event){
+        event.preventDefault()
+    //pegar os dados do formulário
+    const formData = new FormData(formEditarProd)
+    const data = {};
+    formData.forEach((value,key) => {
+        data[key] = value;
+    })
+
+    //converter para os tipos declarados no prisma
+    data.id = parseInt(data.id)
+    data.preco = parseFloat(data.preco)
+    data.estoque = parseFloat(data.estoque)
+    data.categoriaId = parseInt(data.categoriaId)
+
+    const id = data.id
+    //verificar conteúdo de data
+    console.log('Dados do formulário:', data)
+
+    fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtos/${id}`,{
+        method: 'PUT',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+
+    })
+})
