@@ -11,5 +11,5 @@ btnCadProdForn.addEventListener('click', function(){
 
 const btnListaProdForn = document.getElementById('btnListaProd_Forn');
 btnListaProdForn.addEventListener('click', function(){
-  window.location.href = '../Read/consulta_prodxForn.html';
+  window.location.href = '../Read/consulta_prodxforn.html';
 })
