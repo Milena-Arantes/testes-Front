@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     const produtoId = produtoFornecedor.produtoId;
                     const fornecedorId = produtoFornecedor.fornecedorId;
 
-
                     row.innerHTML = `
                         <td>${produtoFornecedor.id}</td>
                         <td>${produtoId}</td>
@@ -65,3 +64,4 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error('Erro ao deletar:', error));
         }
     }
+
