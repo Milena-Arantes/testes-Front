@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const formEditarProdxForn = document.getElementById('formEditarProdxForn')
     const btnSalvarProdxForn = document.getElementById('btnEditarProdxForn')
     document.getElementById('id').value = id;
-
+  
     fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtoFornecedor/${id}`)
       .then(response => {
         if (!response.ok) {
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function(){
       })
       .then(data => {
        // Preenche os campos do formulário com os dados do fornecedor
-        document.getElementById('produtoId').value = data.produtoId;
         document.getElementById('fornecedorId').value = data.fornecedorId;
+        document.getElementById('produtoId').value = data.produtoId;
       })
       .catch(error => {
         console.error('Erro ao carregar dados do fornecedor:', error);
@@ -30,14 +30,15 @@ document.addEventListener('DOMContentLoaded', function(){
     formData.forEach((value,key) => {
         data[key] = value;
     })
-
+  
     //converter para os tipos declarados no prisma
-    data.fornecedorId = parseInt(data.fornecedorId)
+    data.id = parseInt(data.id)
+    data.fornecedorId = parseFloat(data.fornecedorId)
     data.produtoId = parseInt(data.produtoId)
-
+  
     //verificar conteúdo de data
     console.log('Dados do formulário:', data)
-
+  
     fetch(`https://projeto-integrador-k9d3.onrender.com/api/produtoFornecedor/${id}`,{
         method: 'PUT',
         headers:{
@@ -45,9 +46,27 @@ document.addEventListener('DOMContentLoaded', function(){
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error))
-
-    })
-})
+    .then(response => {
+        // Verifica o status da resposta
+        if (!response.ok) {
+          return response.json().then(error => {
+            console.error('Erro da API:', error);
+            throw new Error(error.message || 'Erro ao editar os dados');
+          }).catch(() => {
+            // Se não conseguir extrair JSON, lança um erro genérico
+            throw new Error('Erro ao editar os dados. Status: ' + response.status);
+          });
+        }
+        return response.json();
+      })
+      .then(result => {
+        console.log('Dados editados com sucesso!', result);
+        alert(`Produto editado com Sucesso!`);
+        window.location.href = '../Read/consulta_prodxforn.html';
+      })
+      .catch(error => {
+        console.error('Erro ao editar os dados:', error);
+        alert('Erro ao editar! Cheque se preencheu todos os campos corretamente!');
+      });
+    });
+  });
